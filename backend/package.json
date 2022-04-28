@@ -1,0 +1,29 @@
+{
+  "name": "coding-challenge-backend",
+  "version": "1.0.0",
+  "description": "NodeJS Coding Challenge",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "lab -t 100",
+    "test-cov-html": "lab -r html -o coverage.html"
+  },
+  "author": "Ratchada Jududom",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/glue": "^8.0.0",
+    "@hapi/hapi": "^20.2.2",
+    "@hapi/inert": "^6.0.5",
+    "@hapi/vision": "^6.1.0",
+    "axios": "^0.26.1",
+    "hapi-swagger": "^14.3.0",
+    "joi": "^17.6.0"
+  },
+  "devDependencies": {
+    "code": "^5.2.4",
+    "jsdoc": "^3.6.10",
+    "lab": "^18.0.2"
+  }
+}
