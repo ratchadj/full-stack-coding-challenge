@@ -1,5 +1,10 @@
 `use strict`;
 
-const { start } = require('./server');
+const { start,init } = require('./server');
 
-start();
+const startServer = async () => {
+    await init();
+    await start();
+};
+
+startServer();
