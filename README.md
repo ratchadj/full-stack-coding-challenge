@@ -21,6 +21,7 @@ HapiJS application
    ```    
 4. For Part 1: Go to http://localhost:8000/format
    For API Document: http://localhost:8000/documentation
+   For Source code Document: https://github.com/ratchadj/full-stack-coding-challenge/tree/master/backend/out
 
 5. Installing FrontEnd
    ```sh
