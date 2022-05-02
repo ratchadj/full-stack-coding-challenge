@@ -1,8 +1,37 @@
 'use-strict';
 
+/**
+ * Formatter API
+ * @module formatController
+ */
+
+/**
+ * @typedef {Object} data
+ * @property {string} id
+ * @property {string} title
+ * @property {number} level
+ * @property {Array.<Object>} children
+ * @property {number} parent_id
+ */
+
+/**
+ * @typedef {Object} input
+ * @property {string} key - level of data
+ * @property {Array.<data>} data - array of data with the same level
+ */
+
+/**
+ * @typedef {Object} formatted
+ * @property {Array.<data>} data - formatted data
+ */
+
+/**
+ * This function formatted data
+ * @param {input} input - input data has level as a key
+ * @return {formatted} - transform data by adding child into the children array of its parent
+ */
 exports.transform = async (input_data) => {
     try {
-        console.log(input_data);
         let response = [];
         let temp = [];
         for (const [key, value] of Object.entries(input_data)) {
@@ -25,12 +54,11 @@ exports.transform = async (input_data) => {
                     temp[element.parent_id] = temp[element.parent_id] || {};
                     temp[element.parent_id].children = temp[element.parent_id].children || [];
                     temp[element.parent_id].children.push(element);
-                }else{ // root
+                }else{ // root level
                     response.push(temp[element.id]);
                 }
             });
         }
-        // console.log(response);
         return JSON.stringify(response);
     } catch (error) {
         console.log(error);
